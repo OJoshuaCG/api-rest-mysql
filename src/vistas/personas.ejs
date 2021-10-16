@@ -1,0 +1,54 @@
+<% include partials/_header %>
+
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-8">
+            <table class="table table-bordered tablehover">
+                <thead>
+                    <tr class="table-light">
+                        <th>N°</th>
+                        <th>Nombre</th>
+                        <th>Monto</th>
+                        <th>Mes</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if (data){ %>
+                        <% for (var i = 0; i < data.length; i++) { %>
+                            <tr>
+                                <td> <%= (i + 1) %> </td>
+                                <td> <%= data[i].Persona %> </td>
+                                <td> <%= data[i].Mes %> </td>
+                                <td> <%= data[i].Monto %> </td>
+                            </tr>
+                            <% } %>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/add" method="post">
+                        <div class="form-group">
+                            <input type="text" name="Persona" placeholder="Nombre" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="Mes" placeholder="Mes" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="Monto" placeholder="Monto" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            Guardar Persona
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% include partials/_footer %>
