@@ -1,8 +1,8 @@
-<% include partials/_header %>
+<% include partes/_header %>
 
 <div class="container">
     <div class="row mt-5">
-        <div class="col-md-8">
+        <div class="col-md-7">
             <table class="table table-bordered tablehover">
                 <thead>
                     <tr class="table-light">
@@ -21,6 +21,10 @@
                                 <td> <%= data[i].Persona %> </td>
                                 <td> <%= data[i].Mes %> </td>
                                 <td> <%= data[i].Monto %> </td>
+                                <td> 
+                                    <a href="/delete/<%= data[i].CodPersona %>" class="btn btn-danger">Eliminar</a> 
+                                    <a href="/update/<%= data[i].CodPersona %>" class="btn btn-success">Editar</a>
+                                </td>
                             </tr>
                             <% } %>
                     <% } %>
@@ -51,4 +55,4 @@
     </div>
 </div>
 
-<% include partials/_footer %>
+<% include partes/_footer %>

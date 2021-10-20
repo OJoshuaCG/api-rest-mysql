@@ -23,7 +23,8 @@ app.use(myConnection(mysql, {
 	user: 'root',
 	password: '',
 	port: 3306,
-	database: 'prueba'
+	//database: 'prueba' 	// en windows
+	database: 'pruebas-lm' 	// en linux
 }, 'single'));
 app.use(express.urlencoded({extend: false}));
 
