@@ -1,0 +1,28 @@
+<% include partes/_header %>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/update/<%= data.CodPersona %>" method="post">
+                        <div class="form-group">
+                            <input type="text" name="Persona" placeholder="Nombre" value="<%= data.Persona %>" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="Mes" placeholder="Mes" value="<%= data.Mes %>" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="Monto" placeholder="Monto" value="<%= data.Monto %>" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            Editar Persona
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% include partes/_footer %>
