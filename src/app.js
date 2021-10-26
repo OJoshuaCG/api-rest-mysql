@@ -1,4 +1,15 @@
-// npm run dev
+/*
+Carrasco García Orlando Joshua
+2183330113
+
+Ejecutar
+npm run dev
+
+Abrir en navegador
+http://localhost:3000/
+
+*/ 
+
 const express = require('express');
 const path = require('path');
 const morgan = require('morgan');
@@ -9,7 +20,6 @@ const app = express();
 
 // importando rutas
 const rutasPersonas = require('./rutas/persona');
-
 
 // settings
 app.set('port', process.env.PORT || 3000);
@@ -23,8 +33,7 @@ app.use(myConnection(mysql, {
 	user: 'root',
 	password: '',
 	port: 3306,
-	//database: 'prueba' 	// en windows
-	database: 'pruebas-lm' 	// en linux
+	database: 'prueba' 	// en windows
 }, 'single'));
 app.use(express.urlencoded({extend: false}));
 
@@ -32,8 +41,10 @@ app.use(express.urlencoded({extend: false}));
 app.use('/', rutasPersonas);
 
 // archivos estaticos
+/*  Aqui podremos incluir imagenes o archivos de estilo
+	Para esta práctica no fue utilizada.
+*/
 app.use(express.static(path.join(__dirname, 'publico')));
-
 
 app.listen(app.get('port'), () =>{
 	console.log('Server on port ' + app.get('port'));
